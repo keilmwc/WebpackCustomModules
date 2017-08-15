@@ -74,8 +74,11 @@ var _sum = __webpack_require__(1);
 
 var _sum2 = _interopRequireDefault(_sum);
 
+__webpack_require__(2);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// 'files' need to be imported in order to be bundled with Webpack
 var total = (0, _sum2.default)(10, 5);
 console.log(total);
 
@@ -94,6 +97,19 @@ var sum = function sum(a, b) {
 };
 
 exports.default = sum;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var image = document.createElement('img');
+image.src = 'http://lorempixel.com/400/400';
+
+// Append image to end of DOM body
+document.body.appendChild(image);
 
 /***/ })
 /******/ ]);
