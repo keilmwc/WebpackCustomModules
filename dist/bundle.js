@@ -70,9 +70,13 @@
 "use strict";
 
 
-var sum = __webpack_require__(1);
+var _sum = __webpack_require__(1);
 
-var total = sum(10, 5);
+var _sum2 = _interopRequireDefault(_sum);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var total = (0, _sum2.default)(10, 5);
 console.log(total);
 
 /***/ }),
@@ -82,11 +86,14 @@ console.log(total);
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 var sum = function sum(a, b) {
   return a + b;
 };
 
-module.exports = sum;
+exports.default = sum;
 
 /***/ })
 /******/ ]);
