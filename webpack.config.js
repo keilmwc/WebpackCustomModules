@@ -15,6 +15,10 @@ const config = {
             {
                 use: 'babel-loader',
                 test: /\.js$/  // Apply loader to .js extensions only
+            },
+            {
+                use: ['style-loader', 'css-loader'],
+                test: /\.css$/ // Apply loader to .css extensions only
             }
         ]
     }
