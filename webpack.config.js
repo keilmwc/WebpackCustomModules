@@ -26,11 +26,11 @@ const config = {
             },
             {
                 // Compress images
-                test: '/\.(jpe?g|png|gif|svg)$/',
+                test: /\.(jpe?g|png|gif|svg)$/,
                 use: [
                     {
-                        use: 'url-loader',
-                        options: { limit: 40000} // Limit image size to 40000bytes
+                        loader: 'url-loader',
+                        options: { limit: 40000} // Limit image size to 40000 bytes if it does uses "file-loader"
                     },
 
                     'image-webpack-loader'
