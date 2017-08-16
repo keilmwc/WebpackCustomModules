@@ -23,6 +23,18 @@ const config = {
                     use: 'css-loader'
                 }),
                 test: /\.css$/ // Apply loader to .css extensions only
+            },
+            {
+                // Compress images
+                test: '/\.(jpe?g|png|gif|svg)$/',
+                use: [
+                    {
+                        use: 'url-loader',
+                        options: { limit: 40000} // Limit image size to 40000bytes
+                    },
+
+                    'image-webpack-loader'
+                ]
             }
         ]
     },
