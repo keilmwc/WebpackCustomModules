@@ -1,4 +1,6 @@
-var path = require('path');
+const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin'); // Extract CSS into seperate file
+
 
 const config = {
     entry: './src/index.js',
@@ -17,11 +19,16 @@ const config = {
                 test: /\.js$/  // Apply loader to .js extensions only
             },
             {
-                use: ['style-loader', 'css-loader'],
+                use: ExtractTextPlugin.extract({
+                    use: 'css-loader'
+                }),
                 test: /\.css$/ // Apply loader to .css extensions only
             }
         ]
-    }
+    },
+    plugins: [
+        new ExtractTextPlugin('style.css') // Finds any files that were transformed by by the loader and save as style.css
+    ]
 };
 
 module.exports = config;
