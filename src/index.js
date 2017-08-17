@@ -1,6 +1,7 @@
-// 'files' need to be imported in order to be bundled with Webpack
-import sum from './sum';
-import './image_viewer';
+const button = document.createElement('button');
+button.innerText = 'Click Me';
+button.onclick = () => {
 
-const total = sum(10, 5);
-console.log(total);
+};
+
+document.body.appendChild(button);
